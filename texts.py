@@ -36,3 +36,4 @@ type_error = 'Мне нужно именно фото'
 too_long_text = 'Слишком длинный текст'
 
 choose_background = 'выбирай фон нажимая на кнопки'
+choose_font= 'выбирай фон'

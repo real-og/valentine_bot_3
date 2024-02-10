@@ -10,3 +10,4 @@ class State(StatesGroup):
     wait_for_photo = State()
     wait_for_text = State()
     changing_background = State()
+    changing_font = State()

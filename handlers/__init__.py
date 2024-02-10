@@ -6,3 +6,4 @@ from . import confirmation
 from . import receiving_photo
 from . import receiving_text
 from . import editing_background
+from . import editing_font

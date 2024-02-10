@@ -19,6 +19,15 @@ def get_next_back(current_back, shift):
         return files[0]
     return files[index]
 
+
+def get_next_font(current_font, shift):
+    files = sorted(os.listdir('fonts'))
+    index = files.index(current_font)
+    index += shift
+    if index == len(files):
+        return files[0]
+    return files[index]
+
 def edit_valentine(original, back, receiver, sender, text, is_photo_set, font_name):
     padding = 25
 
