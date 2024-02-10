@@ -9,3 +9,4 @@ config.py
 test.jpg
 test2.jpg
 images/results
+images/buffer_files

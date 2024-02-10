@@ -16,7 +16,9 @@ async def pose_handler(callback: types.CallbackQuery, state: FSMContext):
         await callback.message.answer(texts.for_confirmation, parse_mode="HTML", reply_markup=kb.confirmation_kb)
         await State.wait_for_confirmation.set()
     elif callback.data == add_photo_btn:
-        pass
+        letter = await callback.message.edit_caption(caption='')
+        await callback.message.answer(texts.send_photo)
+        await State.wait_for_photo.set()
     elif callback.data == add_text_btn:
         pass
     elif callback.data == change_backgroud_btn:
