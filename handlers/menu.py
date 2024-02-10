@@ -1,4 +1,4 @@
-from loader import dp
+from loader import dp, default_text, default_background,default_font, default_photo
 from aiogram import types
 from aiogram.dispatcher import FSMContext
 import texts
@@ -18,6 +18,7 @@ async def show_valentines(message: types.Message, state: FSMContext):
         await letter.send_copy(message.chat.id)
 
 @dp.message_handler(regexp=buttons.send_btn, state=State.menu)
-async def ask_for_receiver(message: types.Message):
+async def ask_for_receiver(message: types.Message, state: FSMContext):
+    await state.update_data(text=default_text, font=default_font, background=default_background, is_photo_set=False)
     await message.answer(texts.for_whom, parse_mode="HTML")
     await State.wait_for_receiver.set()

@@ -9,3 +9,8 @@ add_text_btn = 'Добавить текст'
 change_backgroud_btn = 'Изменить фон'
 change_font_btn = 'Изменить шрифт'
 done_btn = 'Готово'
+
+prev_btn = '◀️'
+choose_btn = 'Выбрать'
+next_btn = '▶️'
+back_btn = 'Назад'

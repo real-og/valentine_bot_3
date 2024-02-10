@@ -24,7 +24,8 @@ async def pose_handler(callback: types.CallbackQuery, state: FSMContext):
         await callback.message.answer(texts.send_text)
         await State.wait_for_text.set()
     elif callback.data == change_backgroud_btn:
-        pass
+        letter = await callback.message.edit_caption(caption=texts.choose_background, reply_markup=kb.editing_back_kb)
+        await State.changing_background.set()
     elif callback.data == change_font_btn:
         pass
 
