@@ -7,7 +7,3 @@ def compose_letter(letter, receiver, sender):
         letter.caption = f"От: {sender}\nКому: {receiver}"
     return letter
 
-admins = [
-    456615147,
-    6150574145,
-    ]
