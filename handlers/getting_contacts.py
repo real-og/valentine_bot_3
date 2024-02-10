@@ -4,7 +4,7 @@ from aiogram.dispatcher import FSMContext
 import texts
 from states import State
 import keyboards as kb
-from logic import compose_letter, add_headers_to_background
+from logic import edit_valentine
 import buttons
 
 
@@ -19,8 +19,7 @@ async def ask_for_sender(message: types.Message, state: FSMContext):
 async def ask_for_letter(message: types.Message, state: FSMContext):
     data = await state.get_data()
     await state.update_data(sender=message.text, backgroud=data.get('background'))
-    receiver = data.get('receiver')
-    add_headers_to_background(data.get('background'), data.get('font'), str(message.from_id) + '.png', receiver, message.text)
+    edit_valentine(str(message.from_id) + '.png', data.get('background'), data.get('receiver'), message.text, data.get('text'), data.get('is_photo_set'), data.get('font'))
     with open('images/results/' + str(message.from_id) + '.png', 'rb') as f:
         await message.answer_photo(photo=f, caption=texts.letter_caption, parse_mode="HTML", reply_markup=kb.editing_menu_kb)
     await State.editing_letter_menu.set()

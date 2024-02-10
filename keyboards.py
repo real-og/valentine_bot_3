@@ -30,4 +30,4 @@ editing_back_kb = InlineKeyboardMarkup()
 editing_back_kb.add(InlineKeyboardButton(prev_btn, callback_data=prev_btn))
 editing_back_kb.insert(InlineKeyboardButton(choose_btn, callback_data=choose_btn))
 editing_back_kb.insert(InlineKeyboardButton(next_btn, callback_data=next_btn))
-editing_back_kb.add(InlineKeyboardButton(back_btn, callback_data=back_btn))
+

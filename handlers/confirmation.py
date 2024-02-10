@@ -1,10 +1,9 @@
-from loader import dp, bot, ADMIN_IDS
+from loader import dp, ADMIN_IDS
 from aiogram import types
 from aiogram.dispatcher import FSMContext
 import texts
 from states import State
 import keyboards as kb
-from logic import compose_letter, add_headers_to_background
 import buttons
 
 @dp.message_handler(regexp=buttons.confirm_btn, state=State.wait_for_confirmation)

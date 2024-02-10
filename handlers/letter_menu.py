@@ -5,7 +5,6 @@ import texts
 import keyboards as kb
 from states import State
 from buttons import *
-import logic
 
 
 @dp.callback_query_handler(state=State.editing_letter_menu)
