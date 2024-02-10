@@ -8,3 +8,4 @@ class State(StatesGroup):
     editing_letter_menu = State()
     wait_for_confirmation = State()
     wait_for_photo = State()
+    wait_for_text = State()
