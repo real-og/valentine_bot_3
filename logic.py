@@ -28,7 +28,7 @@ def get_next_font(current_font, shift):
         return files[0]
     return files[index]
 
-def edit_valentine(original, back, receiver, sender, text, is_photo_set, font_name):
+async def edit_valentine(original, back, receiver, sender, text, is_photo_set, font_name):
     padding = 25
 
     image = Image.open("images/samples/" + back)

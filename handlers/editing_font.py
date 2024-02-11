@@ -17,7 +17,7 @@ async def pose_handler(callback: types.CallbackQuery, state: FSMContext):
             shift = -1
         new_font = get_next_font(data.get('font'), shift)
         await state.update_data(font=new_font)
-        edit_valentine(str(callback.message.chat.id) + '.png', data.get('background'), data.get('receiver'), data.get('sender'), data.get('text'), data.get('is_photo_set'), new_font)
+        await edit_valentine(str(callback.message.chat.id) + '.png', data.get('background'), data.get('receiver'), data.get('sender'), data.get('text'), data.get('is_photo_set'), new_font)
         with open('images/results/' + str(callback.message.chat.id) + '.png', 'rb') as f:
             await callback.message.edit_media(types.InputMediaPhoto(media=f), reply_markup=kb.editing_back_kb)
 
