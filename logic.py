@@ -30,9 +30,13 @@ def get_next_font(current_font, shift):
 
 async def edit_valentine(original, back, receiver, sender, text, is_photo_set, font_name):
     padding = 25
-    caption_size = 60
-    font_size = 50
+    caption_size = 47
+    font_size = 63
     font_color = (255, 255, 255)
+
+    if font_name == 'vasek.ttf':
+        caption_size = int(caption_size * 1.3)
+        font_size = int(font_size * 1.3)
 
     if back in ['color3.png', 'color8.png', 'color9.png']:
         font_color = (20, 20, 20)
@@ -52,7 +56,7 @@ async def edit_valentine(original, back, receiver, sender, text, is_photo_set, f
 
     if is_photo_set:
         size_expected = 600
-        vertical_photo_padding = 110
+        vertical_photo_padding = 120
         
         user_image = Image.open('images/buffer_files/' + original)
 
