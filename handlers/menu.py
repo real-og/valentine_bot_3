@@ -15,7 +15,8 @@ async def show_valentines(message: types.Message, state: FSMContext):
         return
     await message.answer(texts.outcomes, parse_mode="HTML", reply_markup=kb.menu_kb)
     for letter in data['letters']:
-        await letter.send_copy(message.chat.id)
+        mes = types.Message.to_object(letter)
+        await mes.send_copy(message.chat.id)
 
 @dp.message_handler(regexp=buttons.send_btn, state=State.menu)
 async def ask_for_receiver(message: types.Message, state: FSMContext):

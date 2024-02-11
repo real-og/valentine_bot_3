@@ -37,3 +37,5 @@ too_long_text = 'Слишком длинный текст'
 
 choose_background = 'выбирай фон нажимая на кнопки'
 choose_font= 'выбирай фон'
+
+help_message = 'помощь'

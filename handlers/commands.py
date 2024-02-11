@@ -4,8 +4,15 @@ from aiogram.dispatcher import FSMContext
 import texts
 from states import State
 import keyboards as kb
+import json
 
 @dp.message_handler(commands=['start'], state='*')
 async def send_welcome(message: types.Message, state: FSMContext):
+    
     await message.answer(texts.greeting, parse_mode="HTML", reply_markup=kb.menu_kb)
     await State.menu.set()
+
+
+@dp.message_handler(commands=['help'], state='*')
+async def send_welcome(message: types.Message, state: FSMContext):
+    await message.answer(texts.help_message)

@@ -14,7 +14,8 @@ async def confirm_letter(message: types.Message, state: FSMContext):
     data['letters'].append(data['letter'])
     for id in ADMIN_IDS:
         try:
-            await data['letter'].send_copy(id)
+            mes = types.Message.to_object(data['letter'])
+            await mes.send_copy(id)
         except Exception as e:
             print('**1**')
             print(e)

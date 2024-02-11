@@ -11,7 +11,7 @@ from buttons import *
 async def pose_handler(callback: types.CallbackQuery, state: FSMContext):
     if callback.data == done_btn:
         letter = await callback.message.edit_caption(caption='')
-        await state.update_data(letter=letter)
+        await state.update_data(letter=letter.to_python())
         await callback.message.answer(texts.for_confirmation, parse_mode="HTML", reply_markup=kb.confirmation_kb)
         await State.wait_for_confirmation.set()
     elif callback.data == add_photo_btn:
