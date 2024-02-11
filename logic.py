@@ -30,19 +30,25 @@ def get_next_font(current_font, shift):
 
 async def edit_valentine(original, back, receiver, sender, text, is_photo_set, font_name):
     padding = 25
+    caption_size = 60
+    font_size = 50
+    font_color = (255, 255, 255)
+
+    if back in ['color3.png', 'color8.png', 'color9.png']:
+        font_color = (20, 20, 20)
 
     image = Image.open("images/samples/" + back)
-    font = ImageFont.truetype("fonts/" + font_name, 60)
+    font = ImageFont.truetype("fonts/" + font_name, caption_size)
     draw = ImageDraw.Draw(image)
 
     text_to = 'Кому: ' + receiver
     text_from = 'От: ' + sender
 
-    draw.text((padding, padding), text_to, fill=(255, 255, 255), font=font)
+    draw.text((padding, padding), text_to, fill=font_color, font=font)
 
     text2_bbox = draw.textbbox((0, 0), text_from, font=font)
     text2_position = (image.width - text2_bbox[2] - padding, image.height - text2_bbox[3] - padding)
-    draw.text(text2_position, text_from, fill=(255, 255, 255), font=font)
+    draw.text(text2_position, text_from, fill=font_color, font=font)
 
     if is_photo_set:
         size_expected = 600
@@ -76,7 +82,7 @@ async def edit_valentine(original, back, receiver, sender, text, is_photo_set, f
     
     draw = ImageDraw.Draw(image)
     
-    font = ImageFont.truetype("fonts/" + font_name, 50)
+    font = ImageFont.truetype("fonts/" + font_name, font_size)
     
     text_bbox = draw.textbbox((0, 0), text, font=font)
     text_width = text_bbox[2] - text_bbox[0]
@@ -84,7 +90,7 @@ async def edit_valentine(original, back, receiver, sender, text, is_photo_set, f
     text_x = (width - text_width) // 2
     text_y = 710 + (900 - 710 - text_height) // 2
     
-    draw.text((text_x, text_y), text, fill=(255, 255, 255), font=font)
+    draw.text((text_x, text_y), text, fill=font_color, font=font)
     
     image.save('images/results/' + original)
     return True
