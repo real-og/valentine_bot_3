@@ -14,9 +14,6 @@ confirmation_kb = ReplyKeyboardMarkup([['Изменить🔁',
                                        resize_keyboard=True,
                                        one_time_keyboard=True)
 
-anonim_kb = ReplyKeyboardMarkup([['Аноним']],
-                               resize_keyboard=True,
-                               one_time_keyboard=True)
 
 editing_menu_kb = InlineKeyboardMarkup()
 editing_menu_kb.add(InlineKeyboardButton(add_photo_btn, callback_data=add_photo_btn))

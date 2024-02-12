@@ -11,7 +11,7 @@ import buttons
 @dp.message_handler(state=State.wait_for_receiver)
 async def ask_for_sender(message: types.Message, state: FSMContext):
     await state.update_data(receiver=message.text)
-    await message.answer(texts.for_sender, parse_mode="HTML", reply_markup=kb.anonim_kb)
+    await message.answer(texts.for_sender)
     await State.wait_for_sender.set()
 
 
