@@ -1,4 +1,4 @@
-from loader import dp
+from loader import dp, default_text, default_background,default_font, default_photo
 from aiogram import types
 from aiogram.dispatcher import FSMContext
 import texts
@@ -14,7 +14,7 @@ async def send_welcome(message: types.Message, state: FSMContext):
     arg_code = extract_unique_code(message.text)
     if arg_code:
         await message.answer(texts.link_greeting)
-        await state.update_data(receiver_code=arg_code)
+        await state.update_data(text=default_text, font=default_font, background=default_background, is_photo_set=False, receiver_code=arg_code)
         await State.wait_for_receiver.set()
     else:
         await message.answer(texts.generate_greeting(message.from_user.id))
