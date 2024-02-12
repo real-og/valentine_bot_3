@@ -10,6 +10,7 @@ add_photo_btn = 'Добавить фото'
 add_text_btn = 'Добавить текст'
 change_backgroud_btn = 'Изменить фон'
 change_font_btn = 'Изменить шрифт'
+reset_btn = 'Начать заново'
 done_btn = 'Готово'
 
 prev_btn = '◀️'

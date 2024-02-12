@@ -1,4 +1,4 @@
-from loader import dp
+from loader import dp, default_text, default_background,default_font, default_photo
 from aiogram import types
 from aiogram.dispatcher import FSMContext
 import texts
@@ -14,6 +14,11 @@ async def pose_handler(callback: types.CallbackQuery, state: FSMContext):
         await state.update_data(letter=letter.to_python())
         await callback.message.answer(texts.for_confirmation, parse_mode="HTML", reply_markup=kb.confirmation_kb)
         await State.wait_for_confirmation.set()
+    if callback.data == reset_btn:
+        await callback.message.delete()
+        await callback.message.answer(texts.for_whom)
+        await state.update_data(text=default_text, font=default_font, background=default_background, is_photo_set=False)
+        await State.wait_for_receiver.set()
     elif callback.data == add_photo_btn:
         letter = await callback.message.edit_caption(caption='')
         await callback.message.answer(texts.send_photo)

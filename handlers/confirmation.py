@@ -50,3 +50,7 @@ async def cancel_letter(message: types.Message, state: FSMContext):
     await message.answer(texts.after_canceled)
     await message.answer(texts.menu_message, reply_markup=kb.menu_kb)
     await State.menu.set()
+
+@dp.message_handler(state=State.wait_for_confirmation)
+async def ask_for_receiver(message: types.Message, state: FSMContext):
+    await message.answer(texts.use_buttons, reply_markup=kb.confirmation_kb)

@@ -20,6 +20,7 @@ editing_menu_kb.add(InlineKeyboardButton(add_photo_btn, callback_data=add_photo_
 editing_menu_kb.insert(InlineKeyboardButton(change_backgroud_btn, callback_data=change_backgroud_btn))
 editing_menu_kb.add(InlineKeyboardButton(add_text_btn, callback_data=add_text_btn))
 editing_menu_kb.insert(InlineKeyboardButton(change_font_btn, callback_data=change_font_btn))
+editing_menu_kb.add(InlineKeyboardButton(reset_btn, callback_data=reset_btn))
 editing_menu_kb.add(InlineKeyboardButton(done_btn, callback_data=done_btn))
 
 
