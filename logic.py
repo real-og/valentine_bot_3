@@ -1,11 +1,11 @@
 from PIL import Image, ImageDraw, ImageFont
 import os
 
-async def compose_letter(letter, receiver, type):
+async def compose_letter(letter, receiver, sender):
     if letter.text:
-        letter.text = f"Тип: {type}\nКому: {receiver}"
+        letter.text = f"Тип: {sender}\nКому: {receiver}"
     else:
-        letter.caption = f"Тип: {type}\nКому: {receiver}"
+        letter.caption = f"От: {sender}\nКому: {receiver}"
     return letter
 
 
