@@ -63,13 +63,13 @@ link_greeting = """<b>Привет!</b> Ты перешел по ссылке, �
 
 
 def generate_link(id):
-    return f"""t.me/try_and_take_bot?start={id}"""
+    return f"""t.me/anonim_card_bot?start={id}"""
 
 def generate_greeting(id):
     return f"""<b>Привет!</b> 
 Ты перешел НЕ по ссылке. Вот <b>твоя</b> ссылка для размещения в соц.сетях⬇️
 
-t.me/try_and_take_bot?start={id}
+t.me/anonim_card_bot?start={id}
 
 Тот, кто перейдет, сможет писать тебе анонимные валентинки"""
 
