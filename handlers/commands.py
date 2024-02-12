@@ -4,7 +4,8 @@ from aiogram.dispatcher import FSMContext
 import texts
 from states import State
 import keyboards as kb
-
+from aiotables import append_user
+from datetime import datetime
 
 def extract_unique_code(text):
     return text.split()[1] if len(text.split()) > 1 else None
@@ -20,6 +21,7 @@ async def send_welcome(message: types.Message, state: FSMContext):
         await message.answer(texts.generate_greeting(message.from_user.id))
         await message.answer(texts.no_link_greeting, reply_markup=kb.menu_kb)
         await State.menu.set()
+    await append_user(datetime.now().strftime('%d/%m/%Y, %H:%M:%S'), message.from_id, message.from_user.username)
 
 
 @dp.message_handler(commands=['help'], state='*')

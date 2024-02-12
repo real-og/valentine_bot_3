@@ -10,3 +10,5 @@ test.jpg
 test2.jpg
 images/results
 images/buffer_files
+.DS_Store
+images/samples/.DS_Store

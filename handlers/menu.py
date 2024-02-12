@@ -29,4 +29,10 @@ async def ask_for_receiver(message: types.Message, state: FSMContext):
 @dp.message_handler(regexp=buttons.my_link_btn, state=State.menu)
 async def ask_for_receiver(message: types.Message, state: FSMContext):
     await message.answer(texts.generate_link(message.from_user.id), reply_markup=kb.menu_kb)
+
+
+@dp.message_handler(state=State.menu)
+async def ask_for_receiver(message: types.Message, state: FSMContext):
+    await message.answer(texts.use_buttons, reply_markup=kb.menu_kb)
+
     
