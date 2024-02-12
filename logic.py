@@ -1,13 +1,11 @@
 from PIL import Image, ImageDraw, ImageFont
 import os
 
-def compose_letter(letter, receiver, sender):
+async def compose_letter(letter, receiver, type):
     if letter.text:
-        letter.text = f"От: {sender}\nКому: {receiver}\n{letter.text}"
-    elif letter.caption:
-        letter.caption = f"От: {sender}\nКому: {receiver}\n{letter.caption}"
+        letter.text = f"Тип: {type}\nКому: {receiver}"
     else:
-        letter.caption = f"От: {sender}\nКому: {receiver}"
+        letter.caption = f"Тип: {type}\nКому: {receiver}"
     return letter
 
 
@@ -91,6 +89,18 @@ async def edit_valentine(original, back, receiver, sender, text, is_photo_set, f
     text_bbox = draw.textbbox((0, 0), text, font=font)
     text_width = text_bbox[2] - text_bbox[0]
     text_height = text_bbox[3] - text_bbox[1]
+
+    if text_width > 1000 and len(text) < 60:
+        split_index = len(text) // 2
+        while text[split_index] != ' ':
+            split_index -= 1
+        text = text[:split_index] + '\n' + text[split_index+1:]
+        text_bbox = draw.textbbox((0, 0), text, font=font)
+        text_width = text_bbox[2] - text_bbox[0]
+        text_height = text_bbox[3] - text_bbox[1]
+
+
+
     text_x = (width - text_width) // 2
     text_y = 710 + (900 - 710 - text_height) // 2
     

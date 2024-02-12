@@ -31,3 +31,9 @@ editing_back_kb.add(InlineKeyboardButton(prev_btn, callback_data=prev_btn))
 editing_back_kb.insert(InlineKeyboardButton(choose_btn, callback_data=choose_btn))
 editing_back_kb.insert(InlineKeyboardButton(next_btn, callback_data=next_btn))
 
+type_kb = ReplyKeyboardMarkup([[email_btn,offline_btn,]],
+                                resize_keyboard=True,
+                                one_time_keyboard=True)
+
+
+

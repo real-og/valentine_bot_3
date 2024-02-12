@@ -7,3 +7,4 @@ from . import receiving_photo
 from . import receiving_text
 from . import editing_background
 from . import editing_font
+from . import getting_address

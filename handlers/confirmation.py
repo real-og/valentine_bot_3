@@ -20,8 +20,9 @@ async def confirm_letter(message: types.Message, state: FSMContext):
             print('**1**')
             print(e)
     await state.update_data(letters=data['letters'])
-    await message.answer(texts.after_confirmed, parse_mode="HTML", reply_markup=kb.menu_kb)
-    await State.menu.set()
+    await message.answer(texts.ask_for_type, parse_mode="HTML", reply_markup=kb.type_kb)
+    # await State.menu.set()
+    await State.waiting_for_type.set()
 
 @dp.message_handler(regexp=buttons.change_btn, state=State.wait_for_confirmation)
 async def change_letter(message: types.Message, state: FSMContext):

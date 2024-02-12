@@ -14,3 +14,6 @@ prev_btn = '◀️'
 choose_btn = 'Выбрать'
 next_btn = '▶️'
 back_btn = 'Назад'
+
+email_btn = 'Онлайн'
+offline_btn = 'Офлайн'

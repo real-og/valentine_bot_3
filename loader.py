@@ -13,7 +13,7 @@ storage = RedisStorage2(db=2)
 # storage = MemoryStorage()
 
 default_text = 'Подпись...'
-default_background = 'color1.png'
+default_background = 'color9.png'
 default_font = 'comforter.ttf'
 default_photo = None
 
