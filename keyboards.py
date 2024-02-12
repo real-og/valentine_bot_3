@@ -4,7 +4,7 @@ from aiogram.types import ReplyKeyboardRemove, \
 from buttons import *
 
 
-menu_kb = ReplyKeyboardMarkup([['Отправленные📁', 'Отправить💌']],
+menu_kb = ReplyKeyboardMarkup([[sent_btn, send_btn], [my_link_btn]],
                                resize_keyboard=True,
                                one_time_keyboard=True)
 

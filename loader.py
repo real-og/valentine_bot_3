@@ -9,7 +9,7 @@ logging.basicConfig(level=logging.INFO)
 ADMIN_IDS = str(os.environ.get('ADMIN_IDS')).split(',')
 BOT_TOKEN = str(os.environ.get('BOT_TOKEN'))
 
-storage = RedisStorage2(db=2)
+storage = RedisStorage2(db=3)
 # storage = MemoryStorage()
 
 default_text = 'Подпись...'
