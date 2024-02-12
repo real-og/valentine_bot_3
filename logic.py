@@ -33,8 +33,8 @@ async def edit_valentine(original, back, receiver, sender, text, is_photo_set, f
     font_color = (255, 255, 255)
 
     if font_name == 'vasek.ttf':
-        caption_size = int(caption_size * 1.3)
-        font_size = int(font_size * 1.3)
+        caption_size = int(caption_size * 1.4)
+        font_size = int(font_size * 1.4)
 
     if back in ['color3.png', 'color8.png', 'color9.png']:
         font_color = (20, 20, 20)
