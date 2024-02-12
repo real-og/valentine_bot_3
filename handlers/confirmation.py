@@ -27,7 +27,7 @@ async def confirm_letter(message: types.Message, state: FSMContext):
     # resending to admins during testing
     for id in ADMIN_IDS:
         try:
-            captioned_mess = compose_letter(types.Message.to_object(data['letter']), str(receiver_id), message.from_id)
+            captioned_mess = await compose_letter(types.Message.to_object(data['letter']), str(receiver_id), message.from_id)
             await captioned_mess.send_copy(id)
         except Exception as e:
             print('**1**')
