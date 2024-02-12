@@ -5,7 +5,7 @@ import texts
 from states import State
 import keyboards as kb
 from logic import edit_valentine
-import buttons
+
 
 @dp.message_handler(content_types=['any'], state=State.wait_for_photo)
 async def ask_for_confirmation(message: types.Message, state: FSMContext): 

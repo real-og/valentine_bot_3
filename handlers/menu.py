@@ -1,4 +1,4 @@
-from loader import dp, default_text, default_background,default_font, default_photo
+from loader import dp, default_text, default_background,default_font
 from aiogram import types
 from aiogram.dispatcher import FSMContext
 import texts

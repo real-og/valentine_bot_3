@@ -1,11 +1,11 @@
-from loader import dp, bot, ADMIN_IDS
+from loader import dp
 from aiogram import types
 from aiogram.dispatcher import FSMContext
 import texts
 from states import State
 import keyboards as kb
 from logic import edit_valentine
-import buttons
+
 
 @dp.message_handler(content_types=['text'], state=State.wait_for_text)
 async def ask_for_confirmation(message: types.Message, state: FSMContext): 

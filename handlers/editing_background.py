@@ -22,7 +22,7 @@ async def pose_handler(callback: types.CallbackQuery, state: FSMContext):
             await callback.message.edit_media(types.InputMediaPhoto(media=f), reply_markup=kb.editing_back_kb)
 
     elif callback.data == choose_btn:
-        letter = await callback.message.edit_caption(caption='', reply_markup=kb.editing_menu_kb)
+        await callback.message.edit_caption(caption='', reply_markup=kb.editing_menu_kb)
         await State.editing_letter_menu.set()
 
     await callback.answer()

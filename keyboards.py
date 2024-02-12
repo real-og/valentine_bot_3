@@ -8,9 +8,9 @@ menu_kb = ReplyKeyboardMarkup([[sent_btn, send_btn], [my_link_btn]],
                                resize_keyboard=True,
                                one_time_keyboard=True)
 
-confirmation_kb = ReplyKeyboardMarkup([['Изменить🔁',
-                                         'Отменить❌',],
-                                        ['Подтвердить✅']],
+confirmation_kb = ReplyKeyboardMarkup([[change_btn,
+                                         cancel_btn,],
+                                        [confirm_btn]],
                                        resize_keyboard=True,
                                        one_time_keyboard=True)
 
@@ -28,9 +28,7 @@ editing_back_kb.add(InlineKeyboardButton(prev_btn, callback_data=prev_btn))
 editing_back_kb.insert(InlineKeyboardButton(choose_btn, callback_data=choose_btn))
 editing_back_kb.insert(InlineKeyboardButton(next_btn, callback_data=next_btn))
 
-type_kb = ReplyKeyboardMarkup([[email_btn,offline_btn,]],
-                                resize_keyboard=True,
-                                one_time_keyboard=True)
+
 
 
 

@@ -4,7 +4,7 @@ from aiogram.dispatcher import FSMContext
 import texts
 from states import State
 import keyboards as kb
-import json
+
 
 def extract_unique_code(text):
     return text.split()[1] if len(text.split()) > 1 else None

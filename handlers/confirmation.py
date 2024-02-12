@@ -13,6 +13,8 @@ async def confirm_letter(message: types.Message, state: FSMContext):
         data['letters'] = []
     data['letters'].append(data['letter'])
     receiver_id = data.get('receiver_code')
+
+    # sending to target
     try:
         mes = types.Message.to_object(data['letter'])
         await mes.send_copy(receiver_id)
@@ -38,7 +40,7 @@ async def confirm_letter(message: types.Message, state: FSMContext):
 
 @dp.message_handler(regexp=buttons.change_btn, state=State.wait_for_confirmation)
 async def change_letter(message: types.Message, state: FSMContext):
-    await message.answer(texts.after_changed, parse_mode="HTML")
+    await message.answer(texts.after_changed)
     with open('images/results/' + str(message.from_id) + '.png', 'rb') as f:
         await message.answer_photo(photo=f, caption=texts.letter_caption, reply_markup=kb.editing_menu_kb)
     await State.editing_letter_menu.set()
